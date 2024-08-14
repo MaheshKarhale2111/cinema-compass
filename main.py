@@ -50,8 +50,12 @@ def recommend(movie):
     return recommended_movie, recommended_movie_index
 
 
-st.sidebar.header("CINEMA COMPASS") 
-st.sidebar.text("A MOVIE RECOMMENDATION SYSTEM") 
+# st.sidebar.header("CINEMA COMPASS") 
+
+
+
+st.sidebar.image('logo.jpg')
+st.sidebar.markdown("<h4 style=' font-size : 15px;  font-family: math; padding :0 0 3.5rem 0'>A MOVIE RECOMMENDATION SYSTEM</h5>", unsafe_allow_html=True)
 # st.sidebar.divider()
 st.sidebar.markdown(''' **:red-background[How it works?]**''')
 st.sidebar.markdown('''Select a movie from the dropdown and click 'Recommend' to get the top 5 movie recommendations.''')
@@ -61,7 +65,10 @@ st.sidebar.markdown(''' **:red-background[Movie name is visible but can't see po
 st.sidebar.markdown('''That's error from TMDB api, Try again after few seconds''')
 
 
-if st.button("Recommmend"):
+
+
+
+if st.button("Recommend"):
     # st.write("Why hello there")
     movie_indexes = recommend(selected_movie)
     posters = []
@@ -84,10 +91,10 @@ if st.button("Recommmend"):
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown(f"<h4 style='padding: 1rem 5px 1rem 5px'>{movies[0]}</h4>", unsafe_allow_html=True)
+        st.markdown(f"<h4 style='padding: 1rem 5px 1rem 5px; border-bottom: 10px solid #cabc8b'>{movies[0]}</h4>", unsafe_allow_html=True)
         st.image(posters[0])
     with col2:
-        st.markdown(f"<h4 style='padding: 1rem 5px 1rem 5px'>{movies[1]}</h4>", unsafe_allow_html=True)
+        st.markdown(f"<h4 style='padding: 1rem 5px 1rem 5px; border-bottom: 10px solid #cabc8b'>{movies[1]}</h4>", unsafe_allow_html=True)
         st.image(posters[1])
     
     
@@ -95,13 +102,13 @@ if st.button("Recommmend"):
 
     with col1:
         # st.subheader(f'''**{movies[2]}**''')
-        st.markdown(f"<h5 style='padding: 1rem 5px 10px 5px'>{movies[2]}</h5>", unsafe_allow_html=True)
+        st.markdown(f"<h5 style='padding: 1rem 5px 10px 5px; border-bottom: 10px solid #cabc8b'>{movies[2]}</h5>", unsafe_allow_html=True)
         st.image(posters[2])
     with col2:
-        st.markdown(f"<h5 style='padding: 1rem  5px 10px 5px''>{movies[3]}</h5>", unsafe_allow_html=True)
+        st.markdown(f"<h5 style='padding: 1rem  5px 10px 5px; border-bottom: 10px solid #cabc8b''>{movies[3]}</h5>", unsafe_allow_html=True)
         st.image(posters[3])
     with col3:
-        st.markdown(f"<h5 style='padding: 1rem  5px 10px 5px''>{movies[4]}</h5>", unsafe_allow_html=True)
+        st.markdown(f"<h5 style='padding: 1rem  5px 10px 5px; border-bottom: 10px solid #cabc8b''>{movies[4]}</h5>", unsafe_allow_html=True)
         st.image(posters[4],)
    
 
