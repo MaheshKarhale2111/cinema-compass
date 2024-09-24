@@ -31,23 +31,24 @@ movie_list = movies['title'].tolist()
 st.subheader('Select a movie')
 selected_movie = st.selectbox(' ',movie_list)
 
-with open('similarity.pkl', 'rb') as f:
+with open('new_similarity.pkl', 'rb') as f:
     similarity = pickle.load(f)
 
 def recommend(movie):
     movie_index = movies[movies['title'] == movie].index[0]
-    distances = similarity[movie_index]
+    recommended_movie  = []
+    recommended_movie_id = []
+    recommended_movie_index = similarity[movie_index]
+
 
     # by sorting we are losing index postion of movie , call enumerate
-    movies_list = sorted(list(enumerate(distances)),reverse=True,key = lambda x:x[1])[1:6]
-    recommended_movie_index = []
-    recommended_movie  = []
-    for i in movies_list:
-
-        recommended_movie.append(movies.iloc[i[0]].title)
-        recommended_movie_index.append(movies.iloc[i[0]].movie_id)
+    # movies_list = sorted(list(enumerate(distances)),reverse=True,key = lambda x:x[1])[1:6]
+    
+    for i in recommended_movie_index:
+        recommended_movie.append(movies.iloc[i].title)
+        recommended_movie_id.append(movies.iloc[i].movie_id)
     # return movies_list
-    return recommended_movie, recommended_movie_index
+    return recommended_movie, recommended_movie_id
 
 
 # st.sidebar.header("CINEMA COMPASS") 
@@ -70,7 +71,7 @@ st.sidebar.markdown('''That's error from TMDB api, Try again after few seconds''
 
 if st.button("Recommend"):
     # st.write("Why hello there")
-    movie_indexes = recommend(selected_movie)
+    # movie_indexes = recommend(selected_movie)
     posters = []
 
     movies, indexes = recommend(selected_movie)
