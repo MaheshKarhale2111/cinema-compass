@@ -62,8 +62,10 @@ st.sidebar.markdown(''' **:red-background[How it works?]**''')
 st.sidebar.markdown('''Select a movie from the dropdown and click 'Recommend' to get the top 5 movie recommendations.''')
 st.sidebar.markdown(''' **:red-background[How it's made?]**''')
 st.sidebar.markdown('''Model is trained with top 5000 movies from TMDB dataset''')
-st.sidebar.markdown(''' **:red-background[Movie name is visible but can't see poster?]**''')
-st.sidebar.markdown('''That's error from TMDB api, Try again after few seconds''')
+# st.sidebar.markdown(''' **:red-background[Movie name is visible but can't see poster?]**''')
+# st.sidebar.markdown('''That's error from TMDB api, Try again after few seconds''')
+# st.sidebar.markdown(''' **:red-background[Movie name is visible but can't see poster?]**''')
+# st.sidebar.markdown('''That's error from TMDB api, Try again after few seconds''')
 
 
 
